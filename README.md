@@ -20,3 +20,4 @@ use any two of the commands, you can test them by playing a game windowed or ful
 
  i need results!!!
 
+Ps: you will need python 3.11.9
