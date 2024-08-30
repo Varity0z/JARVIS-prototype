@@ -1,7 +1,1 @@
-You need python 3.11.9
-
-You need to run this command in CMD
-
 pip install pyttsx3 SpeechRecognition spotipy requests pyaudio google-api-python-client
-
-thats all.
