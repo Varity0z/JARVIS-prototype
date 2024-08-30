@@ -4,7 +4,6 @@ import pyttsx3
 import speech_recognition as sr
 import webbrowser
 import requests
-import json
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
@@ -22,8 +21,8 @@ def speak_text(text):
 recognizer = sr.Recognizer()
 
 # Spotify credentials
-SPOTIPY_CLIENT_ID = '1DL4pRCKKmg238fsCU6i7ZYEStP9fL9o4q'
-SPOTIPY_CLIENT_SECRET = '0630b553c4b147219fddc311211b4bc5'
+SPOTIPY_CLIENT_ID = os.getenv('SPOTIPY_CLIENT_ID')
+SPOTIPY_CLIENT_SECRET = os.getenv('SPOTIPY_CLIENT_SECRET')
 SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback'
 SCOPE = 'user-library-read user-read-playback-state user-modify-playback-state'
 
@@ -34,7 +33,7 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=SPOTIPY_CLIENT_ID,
                                                scope=SCOPE))
 
 # YouTube API key
-YOUTUBE_API_KEY = 'AIzaSyB7Lu-f7ch9BhvHoreM8Jd3okQbFfs2bFQ'
+YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
 
 # Function to search and play the first video on YouTube
 def search_and_play_youtube(query):
